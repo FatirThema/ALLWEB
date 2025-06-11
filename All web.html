@@ -1,0 +1,830 @@
+<!!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FATIR DEVILLAN OFFICIAL</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://h.top4top.io/p_33363xa4j0.jpg">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="FATIR DEVILLAN">
+  <meta property="og:description" content="Cari produk,kebutuhan hosting, atau akun bisa scroll dan lihat dibawah - 𝗙𝗔𝗧𝗜𝗥 𝗗𝗘𝗩𝗜𝗟𝗟𝗔𝗡 𝗢𝗙𝗙𝗜𝗖𝗜𝗔𝗟">
+  <meta property="og:image" content="https://h.top4top.io/p_33363xa4j0.jpg">
+  <meta property="og:url" content="https://fatirdevillanshop.vercel.app">
+  <meta property="og:type" content="website">
+    <style>
+      :root {
+      --primary: #4c51bf;
+      --primary-dark: #434190;
+      --secondary: #38a169;
+      --secondary-dark: #2f855a;
+      --dark: #1a202c;
+      --dark-lighter: #2d3748;
+      --light: #e2e8f0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--dark);
+      color: var(--light);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      overflow: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      outline: none;
+    }
+
+    .intro-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(10px);
+      background: rgba(0, 0, 0, 0.4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      opacity: 1;
+      animation: fadeInOverlay 1s forwards;
+    }
+
+    @keyframes fadeInOverlay {
+      to { opacity: 1; }
+    }
+
+    .intro-content {
+      text-align: center;
+      animation: fadeInWidget 1s forwards;
+      animation-delay: 1s;
+      opacity: 0;
+      transform: translateY(20px);
+      z-index: 10001;
+      position: relative;
+      pointer-events: auto; /* memastikan bisa diklik */
+    }
+
+    @keyframes fadeInWidget {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .welcome-text {
+      color: white;
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+      padding: 15px 30px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(4px);
+    }
+
+    .intro-button {
+      padding: 12px 24px;
+      font-size: 1rem;
+      color: #1a202c;
+      background: linear-gradient(45deg, white, cyan);
+      border: none;
+      border-radius: 30px;
+      box-shadow: 0 0 12px rgba(0,255,255,0.4);
+      transition: background 0.3s, transform 0.3s;
+      z-index: 10002;
+      position: relative;
+    }
+
+    .intro-button:hover {
+      background: linear-gradient(45deg, cyan, white);
+      transform: scale(1.05);
+    }
+
+    .intro-overlay.hide {
+      animation: fadeOutOverlay 1s forwards;
+    }
+
+    @keyframes fadeOutOverlay {
+      to { opacity: 0; visibility: hidden; }
+    }
+    
+    #home.show {
+      display: block;
+      pointer-events: auto;
+    }
+    
+
+
+        header {
+            background: linear-gradient(135deg, #3998e4 0%, #667eea 100%);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            z-index: 0;
+        }
+        
+        header > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        header img {
+            width: 8rem;
+            height: 8rem;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            border: 4px solid white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        header img:hover {
+            transform: scale(1.05);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        
+      
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        nav a button {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            color: white;
+            font-weight: 800;
+            padding: 0.75rem 0.7rem;
+            border-radius: 9999px;
+            font-size: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        nav a button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 9px 14px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.25);
+        }
+        
+        nav a button:active {
+            transform: translateY(0);
+        }
+        
+        
+        section {
+            padding: 4rem 1.5rem;
+        }
+        
+        section h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        section h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        section h1 i {
+            margin-right: 0.5rem;
+            color: var(--secondary);
+        }
+        
+       
+        .project-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 1.5rem;
+            padding: 1.5rem 0.5rem;
+            scroll-behavior: smooth;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            position: relative;
+        }
+        
+        .project-container::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .carousel-controls button {
+            background: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .carousel-controls button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+
+        .produk {
+            background: linear-gradient(145deg, #323b4d, #2a3241);
+            border-radius: 1rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            padding: 1.5rem;
+            width: 100%;
+            max-width: 320px;
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        
+  .list-produk {
+    font-size: 20px;
+    font-weight: 600;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 5s infinite linear;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+
+        .produk:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+        }
+        
+        .produk img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 0.75rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .produk:hover img {
+            transform: scale(1.03);
+        }
+        
+        .produk h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .produk ul {
+            list-style-type: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .produk ul li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .produk ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+        
+        .produk p {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: white;
+            padding: 0.5rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .produk a {
+            display: block;
+            text-align: center;
+            background: linear-gradient(to right, var(--secondary), var(--secondary-dark));
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+        
+        .produk a:hover {
+            transform: scale(1.05);
+            box-shadow: 0 7px 14px rgba(0, 0, 0, 0.15);
+        }
+        
+        
+        .warning {
+            background: linear-gradient(135deg, #e53e3e 0%, #c53030 100%);
+            color: white;
+            padding: 3rem 1.5rem;
+            text-align: left;
+            margin: 3rem 0;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .warning::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.2;
+        }
+        
+        .warning > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .warning h1 {
+            color: white;
+        }
+        
+        .warning h1::after {
+            background: white;
+        }
+        
+        .warning p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        
+        .faq, .about {
+            background: linear-gradient(145deg, #323b4d, #2a3241);
+            border-radius: 1rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            padding: 2.5rem;
+            max-width: 900px;
+            margin: 3rem auto;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .faq h2, .about h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        .faq ul {
+            list-style-type: none;
+        }
+        
+        .faq ul li {
+            margin-bottom: 1.5rem;
+        }
+        
+        .faq ul li strong {
+            color: var(--secondary);
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .about p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+         <-- chanell:https://whatsapp.com/channel/0029VawpOo5GOj9x4BedMh1c -->
+        .medsos {
+            text-align: left;
+            padding: 4rem 1.5rem;
+        }
+        
+        .medsos-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .medsos button {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            font-weight: 600;
+            padding: 1rem 1.5rem;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .medsos button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, var(--secondary), var(--primary));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .medsos button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .medsos button:hover::before {
+            opacity: 1;
+        }
+        
+        .medsos button i, .medsos button span {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-lighter);
+            color: var(--light);
+            text-align: center;
+            padding: 2rem 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+         
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            background: var(--primary-dark);
+        }
+        
+   
+    
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .produk {
+                max-width: 280px;
+            }
+            
+            .faq, .about {
+                padding: 1.5rem;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .project-container {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="intro-overlay" id="intro">
+    <div class="intro-content">
+      <h1 class="welcome-text">Wellcome In Web Store - FATIR DEVILLAN</h1>
+      <button class="intro-button" onclick="hideIntro()">𝐕𝐈𝐄𝐖 𝐖𝐄𝐁𝐒𝐈𝐓𝐄</button>
+    </div>
+  </div>
+  
+  
+    <!-- header kamu tetap seperti ini -->
+    <header id="home">
+        <img src="https://h.top4top.io/p_33363xa4j0.jpg" alt="Profile Pictures By FATIR DEVILLAN OFFICIAL">
+        <h1>FATIR DEVILLAN OFFICIAL</h1>
+        <p>STORE & TEMPAT HOSTING TERAMAN SEDUNIA</p>
+        
+        <nav>
+            <a href="#home"><button><i class="fas fa-home"></i> Home</button></a>
+            <a href="Ikuti saluran Proof of Information Update di WhatsApp: https://whatsapp.com/channel/0029VawpOo5GOj9x4BedMh1c"><button><i class="fas fa-star"></i>Information Update</button></a>
+            <a href="https://whatsapp.com/channel/0029VawpOo5GOj9x4BedMh1c"><button><i class="fas fa-star"></i> Testimoni</button></a>
+            <a href="https://www.youtube.com/@fatirdevillan.devbase"><button><i class="fas fa-star"></i> Chanel YouTube</button></a>
+            <a href="#produc"><button><i class="fas fa-store"></i> Produk</button></a>
+            <a href="#faq"><button><i class="fas fa-question-circle"></i> FAQ</button></a>
+            <a href="#about"><button><i class="fas fa-info-circle"></i> About</button></a>
+            <a href="#medsos"><button><i class="fas fa-globe"></i> Medsos</button></a>
+        </nav>
+    </header>
+    
+     
+    <section id="produc">
+    <h1><i class="fas fa-store"></i> ALL WEBSITE </h1>
+    
+    <div class="list-produk">
+          LIST ALL PRODUK WEBSITE
+            </div>
+    
+    <div class="project-container" id="productCarousel">
+        <div class="produk">           
+            <img src="https://files.catbox.moe/rcx0om.jpg" alt="Gambar Produk Website">
+            <h2>WEB STORE PRODUK</h2>
+            <ul>
+                <li>Website produk store bisa request produk,sosmed, dan lain-lain</li>
+                <li>Garansi 20 hari jika eror</li>
+                <li>Dukungan 24/7</li>
+                <li>Untuk info detail web bisa cek web dibawah</li>
+                <li>fatirdevillanshop.vercel.app<li>
+            </ul>
+            <p>Harga: Rp 50.000</p>
+            <a href="https://wa.me/6285881867694?text=Hallo+Saya+Mau+Order+Jasa+Cweb+Produk+Store" target="_blank">Beli Sekarang</a>
+        </div>
+
+
+            <div class="produk">
+    <img src="https://files.catbox.moe/3c6pd0.jpg" alt="Gambar Produk Website Payment">
+    <h2>WEBSITE PAYMENT TRANSAKSI</h2>
+    <ul>
+        <li>Website payment untuk memberikan semua tempat transfer yang tersedia, bisa ganti sound</li>
+        <li>Garansi 20 hari Jika Eror</li>
+        <li>Dukungan 24/7</li>
+        <li>Untuk lebih detail lihat link yang ada di bawah</li>
+        <li>fatirdevillanofficialpayment.vercel.app<li>
+    </ul>
+    <p>Harga: Rp 25.000</p>
+    <a href="https://wa.me/6285881867694?text=Hallo+Saya+Mau+Beli+Order+Jasa+Cweb+Payment+Transaksi" target="_blank">Beli Sekarang</a>
+            </div>
+
+        <div class="produk">
+    <img src="https://files.catbox.moe/5052so.jpg" alt="Gambar Produk Website Store Produk (Blog Version)">
+    <h2>WEBSITE BLOG STORE PRODUK</h2>
+    <ul>
+        <li>Website produk store bisa request produk,sosmed, dan lain-lain</li>
+        <li>Garansi 20 hari Jika Eror</li>
+        <li>Dukungan 24/7</li>
+        <li>Untuk Detail Bisa chat admin</li>
+    </ul>
+    <p>Harga: Rp 40.000</p>
+    <a href="https://wa.me/6285881867694?text=Hallo+Saya+Mau+Order+Cweb+Store+Produk+Blog+versi" target="_blank">Beli Sekarang</a>
+            </div>
+            
+            <div class="produk">
+    <img src="https://files.catbox.moe/cxmd3j.jpg" alt="Gambar Web TopUp v2 (Blog Version)">
+                <h2>WEB STORE PRODUK</h2>
+            <ul>
+                <li>Website produk store bisa request produk,sosmed, dan lain-lain</li>
+                <li>Garansi 20 hari jika eror</li>
+                <li>Dukungan 24/7</li>
+                <li>Untuk info detail web bisa tanya ke admin</li>
+            </ul>
+            <p>Harga: Rp 50.000</p>
+    <a href="https://wa.me/6285881867694?text=Hallo+Saya+Mau+Order+Cweb+Store+Produk+Blog+versi" target="_blank">Beli Sekarang</a>
+        </div>
+        </div>
+        
+        <div class="carousel-controls">
+            <button id="prevButton"><i class="fas fa-chevron-left"></i></button>
+            <button id="nextButton"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+
+
+    <section id="warning" class="warning">
+        <h1><i class="fas fa-exclamation-triangle"></i> Peringatan</h1>
+        <p>Produk yang saya jual adalah website yang di peruntukan baik pribadi maupun bisnis website kami dibuat atas hak pemilik pembuat tanpa ada copyright dari pihak mana pun sehingga semua produk aman 100%.</p>
+    </section>
+
+    <section id="faq" class="faq">
+        <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+        <ul>
+            <li>
+                <strong>Q: Bagaimana cara membeli Panel Pterodactyl</strong>
+                A: Anda bisa menghubungi kami melalui WhatsApp atau Telegram untuk membeli domain. Kami akan membantu Anda memilih domain yang tepat dan memproses pembelian dengan cepat.
+            </li>
+            <li>
+                <strong>Q: Apakah ada dukungan teknis?</strong>
+                A: Ya, kami menyediakan dukungan teknis 24/7 untuk semua pelanggan kami. Anda dapat menghubungi kami melalui WhatsApp atau Telegram kapan saja.
+            </li>
+            <li>
+                <strong>Q: Apakah ada garansi uang kembali?</strong>
+                A: Ya, kami menawarkan garansi uang kembali dalam 1/2 hari jika Anda tidak puas dengan layanan kami. Kepuasan pelanggan adalah prioritas kami.
+            </li>
+            <li>
+                <strong>Q: Berapa lama proses aktivasi hosting?</strong>
+                A: Proses aktivasi hosting biasanya memakan waktu 1-24 jam setelah pembayaran dikonfirmasi. Kami berusaha untuk mengaktifkan layanan secepat mungkin.
+            </li>
+            <li>
+                <strong>Q: Apakah bisa upgrade paket hosting?</strong>
+                A: Ya, Anda dapat upgrade paket hosting kapan saja sesuai dengan kebutuhan Anda. Kami akan membantu proses migrasi tanpa downtime.
+            </li>
+        </ul>
+    </section>
+
+    <section id="about" class="about">
+        <h2><i class="fas fa-info-circle"></i> Tentang FATIR DEVILLAN OFFICIAL</h2>
+        <p>FATIR DEVILLAN - adalah penyedia layanan Nokos dan hosting yang berkomitmen untuk memberikan layanan terbaik kepada pelanggan kami. Kami menawarkan berbagai website yang sesuai dengan kebutuhan Anda, baik untuk keperluan pribadi maupun bisnis.</p>
+        <p>Dengan pengalaman yang cukup di industri Panel Pterodactyl, kami memahami betul pentingnya keandalan, kecepatan, dan keamanan untuk server Anda. Oleh karena itu, kami menghadirkan layanan dengan dukungan teknologi terbaru serta sistem keamanan canggih, demi memastikan server Anda tetap online, stabil, dan terlindungi setiap saat.</p>
+        <p>Dengan dukungan teknis 12/7 dan harga yang terjangkau, kami siap membantu Anda membangun dan mengelola website Anda dengan mudah dan efisien. Kepuasan pelanggan adalah prioritas utama kami, dan kami berkomitmen untuk memberikan pelayanan terbaik untuk setiap pelanggan.</p>
+    </section>
+
+    <section id="medsos" class="medsos">
+        <h1><i class="fas fa-globe"></i> Media Sosial</h1>
+        <p>Ikuti kami di media sosial untuk mendapatkan informasi terbaru tentang produk, promo, dan tips seputar website.</p>
+        <div class="medsos-buttons">
+            <button id="whatsappButton">
+                <i class="fab fa-whatsapp"></i> <span>WhatsApp</span> <i class="fas fa-external-link-alt"></i>
+            </button>
+            <button id="telegramButton">
+                <i class="fab fa-telegram"></i> <span>Telegram</span> <i class="fas fa-external-link-alt"></i>
+            </button>   
+            <button id="Instagram Button">
+                <i class="fab fa-instagtam"></i> <span>Instagram</span> <i class="fas fa-external-link-alt"></i>
+            </button>            
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 FATIR DEVILLAN. All rights reserved.</p>
+        <p>Menyediakan layanan pembuatan website murah dan keren. </p>
+    </footer>
+
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+     <script>
+    function hideIntro() {
+      const intro = document.getElementById('intro');
+      const home = document.getElementById('home');
+
+      intro.classList.add('hide');
+
+      setTimeout(() => {
+        intro.style.display = 'none';
+        home.classList.add('show');
+        document.body.style.overflow = 'auto'; // izinkan scroll
+      }, 1000);
+    }
+  </script>
+    <script>
+     //chanell:https://whatsapp.com/channel/0029VawpOo5GOj9x4BedMh1c//
+        const carousel = document.getElementById('productCarousel');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+        
+        prevButton.addEventListener('click', () => {
+            carousel.scrollBy({ left: -340, behavior:'smooth' }); });
+                nextButton.addEventListener('click', () => {
+        carousel.scrollBy({ left: 340, behavior: 'smooth' });
+    });
+
+    
+    const backToTopButton = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopButton.classList.add('visible');
+        } else {
+            backToTopButton.classList.remove('visible');
+        }
+    });
+
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    
+    document.getElementById('whatsappButton').onclick = function() {
+        window.open('https://wa.me/6285881867694', '_blank');
+    };
+
+    document.getElementById('telegramButton').onclick = function() {
+        window.open('https://t.me/@Love1infreya', '_blank');
+    };
+    
+    document.getElementById('instagramButton').onclick = function() {
+        window.open('https://www.instagram.com/fatirdevillan.official', '_blank');
+    };
+</script>
+  <h1>Selamat Berbelanja di - FATIR DEVILLAN OFFICIAL</h1>
+</body>
+</html>
